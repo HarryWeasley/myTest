@@ -32,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".VideoActivity"></activity>
         <!--
                 To support devices using the TI S3D library for stereo mode we must
                 add the following library.
