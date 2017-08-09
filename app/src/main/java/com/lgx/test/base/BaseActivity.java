@@ -19,10 +19,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void initView();
 
-    /**
-     * Activity获取数据
-     */
-    protected abstract void getData();
 
 
     @Override
@@ -31,7 +27,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (getContentViewLayoutID() != 0) {
             setContentView(getContentViewLayoutID());
             initView();
-            getData();
         }
     }
 }

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.lgx.test.R;
 import com.lgx.test.base.BaseFragment;
+import com.lgx.test.common.Constants;
 
 import java.math.BigDecimal;
 
@@ -24,7 +25,7 @@ import static com.lgx.test.R.id.am21;
 import static com.lgx.test.R.id.am22;
 import static com.lgx.test.R.id.am23;
 import static com.lgx.test.R.id.am24;
-import static com.lgx.test.fragments.CommercialFragment.year;
+import static com.lgx.test.common.Constants.year;
 
 /**
  * Created by Harry on 2017/8/8.
@@ -83,7 +84,7 @@ public class ReserveFundsFragment extends BaseFragment {
     private void initSpinner() {
         // 将可选内容与ArrayAdapter连接起来
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_item, CommercialFragment.year);
+                android.R.layout.simple_spinner_item, Constants.year);
         // 设置下拉列表的风格
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // 将adapter 添加到spinner中

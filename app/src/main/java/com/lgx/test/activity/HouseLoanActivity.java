@@ -50,10 +50,6 @@ public class HouseLoanActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void getData() {
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -27,8 +27,8 @@ public class HomeActivity extends BaseActivity {
     public static final String ITEM_HOME = "item_home";
     public static final String ITEM_PRICE = "item_price";
     public static final String ITEM_LOCAL = "item_local";
-    public static final String ITEM_COMPANY = "item_company";
-    public static final String ITEM_FOLLOW = "item_follow";
+    public static final String ITEM_COMPANY = "保利品牌";
+    public static final String ITEM_FOLLOW = "关注我们";
     private FragmentManager mFragmentManager;
     private String currentFragmentTag;
     private DrawerLayout mDrawerLayout;
@@ -64,6 +64,7 @@ public class HomeActivity extends BaseActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                mDrawerLayout.closeDrawers();
                 switch (item.getItemId()) {
                     case R.id.item_follow:
                         switchContent(ITEM_FOLLOW);
@@ -104,19 +105,13 @@ public class HomeActivity extends BaseActivity {
             }
         }
         if (findFragment.isAdded()) {
-
             ft.show(findFragment);
         } else {
             ft.add(R.id.contentLayout, findFragment, tagName);
         }
         getSupportActionBar().setTitle(tagName);
-        mDrawerLayout.closeDrawers();
+
         ft.commit();
         currentFragmentTag = tagName;
-    }
-
-    @Override
-    protected void getData() {
-
     }
 }

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.lgx.test.R;
 import com.lgx.test.base.BaseFragment;
 import com.lgx.test.common.CommonUtils;
+import com.lgx.test.common.Constants;
 
 import java.math.BigDecimal;
 
@@ -34,11 +35,7 @@ import static com.lgx.test.R.id.am24;
 
 public class CommercialFragment extends BaseFragment {
 
-    public static final String[] year = {"1", "2", "3", "4", "5", "10", "15",
-            "20", "25", "30"};
-    public static final String[] rate = {"最新基准利率7折", "最新基准利率7.5折", "最新基准利率8折",
-            "最新基准利率8.5折", "最新基准利率9折", "最新基准利率9.5折", "最新基准利率", "最新基准利率1.1倍",
-            "最新基准利率1.2倍", "最新基准利率1.3倍"};
+
 
 
     @BindView(R.id.commercialEditText)
@@ -99,7 +96,7 @@ public class CommercialFragment extends BaseFragment {
     private void initSpinner() {
         // 将可选内容与ArrayAdapter连接起来
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_item, year);
+                android.R.layout.simple_spinner_item, Constants.year);
         // 设置下拉列表的风格
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // 将adapter 添加到spinner中
@@ -111,7 +108,7 @@ public class CommercialFragment extends BaseFragment {
         mYearSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mYearEditText.setText(year[position]);
+                mYearEditText.setText(Constants.year[position]);
 
             }
 
@@ -123,7 +120,7 @@ public class CommercialFragment extends BaseFragment {
 
         // 将可选内容与ArrayAdapter连接起来
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_item, rate);
+                android.R.layout.simple_spinner_item, Constants.rate);
         // 设置下拉列表的风格
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // 将adapter 添加到spinner中
