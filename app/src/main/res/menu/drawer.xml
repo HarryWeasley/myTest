@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item android:title="分组一">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/item_one"
-                    android:title="我的动态"></item>
-                <item
-                    android:id="@+id/item_two"
-                    android:title="我的留言"></item>
-                <item
-                    android:id="@+id/item_three"
-                    android:title="附近的人"></item>
-            </group>
-        </menu>
-        </item>
+        <item
+            android:id="@+id/item_home"
+            android:icon="@mipmap/ic_nav_homepage"
+            android:title="@string/homepage"/>
+        <item
+            android:id="@+id/item_price"
+            android:icon="@drawable/ic_statistics"
+            android:title="@string/price"/>
+        <item
+            android:id="@+id/item_local"
+            android:icon="@drawable/ic_about"
+            android:title="@string/app_name"/>
+        <item
+            android:id="@+id/item_company"
+            android:icon="@drawable/ic_list"
+            android:title="@string/company"/>
+        <item
+            android:id="@+id/item_follow"
+            android:icon="@drawable/ic_gank"
+            android:title="@string/follow_us"/>
     </group>
 </menu>

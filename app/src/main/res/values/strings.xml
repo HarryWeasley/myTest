@@ -1,5 +1,21 @@
 <resources>
-    <string name="app_name">MyAndroid</string>
+    <string name="app_name">保利养生谷</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="homepage">主页</string>
+    <string name="price">房价助手</string>
+    <string name="company">保利品牌</string>
+    <string name="follow_us">关注我们</string>
+
+    <string name="commercial">商业贷款</string>
+    <string name="reserve_funds">公积金贷款</string>
+    <string name="mixed">混合贷款</string>
+    <string name="commercial_monad">商业贷款(单位万)</string>
+    <string name="reserve_monad">公积金贷款(单位万)</string>
+
+    <string name="am10">贷款总额</string>
+    <string name="am11">还款月数</string>
+    <string name="am12">月还款</string>
+    <string name="am13">总支付利息</string>
+    <string name="am14">本息总和</string>
 </resources>

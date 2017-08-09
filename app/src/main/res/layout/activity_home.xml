@@ -16,13 +16,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#30469b"/>
+            android:background="@color/colorPrimaryDark"/>
         <!--你的内容布局-->
         <FrameLayout
             android:id="@+id/contentLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-         />
+            />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/activity_main"
+        app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer">
 
     </android.support.design.widget.NavigationView>

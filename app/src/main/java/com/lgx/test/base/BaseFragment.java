@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -55,6 +56,7 @@ public abstract class BaseFragment extends Fragment{
                 isLazy=bundle.getBoolean(IS_LAZY,true);
             }
             rootView = inflater.inflate(getContentViewLayoutID(), container, false);
+            unBinder = ButterKnife.bind(this, rootView);
             initView();
             return rootView;
         } else {
