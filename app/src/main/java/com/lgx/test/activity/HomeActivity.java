@@ -16,6 +16,7 @@ import com.lgx.test.R;
 import com.lgx.test.base.BaseActivity;
 import com.lgx.test.fragments.CompanyFragment;
 import com.lgx.test.fragments.FollowUsFragment;
+import com.lgx.test.fragments.LocalFragment;
 
 /**
  * Created by User on 2017/7/25.
@@ -26,7 +27,7 @@ public class HomeActivity extends BaseActivity {
 
     public static final String ITEM_HOME = "item_home";
     public static final String ITEM_PRICE = "item_price";
-    public static final String ITEM_LOCAL = "item_local";
+    public static final String ITEM_LOCAL = "保利养生谷";
     public static final String ITEM_COMPANY = "保利品牌";
     public static final String ITEM_FOLLOW = "关注我们";
     private FragmentManager mFragmentManager;
@@ -72,6 +73,9 @@ public class HomeActivity extends BaseActivity {
                     case R.id.item_company:
                         switchContent(ITEM_COMPANY);
                         break;
+                    case R.id.item_local:
+                        switchContent(ITEM_LOCAL);
+                        break;
                     case R.id.item_price:
                         startActivity(new Intent(HomeActivity.this,HouseLoanActivity.class));
                         break;
@@ -101,6 +105,9 @@ public class HomeActivity extends BaseActivity {
                     break;
                 case ITEM_COMPANY:
                     findFragment = new CompanyFragment();
+                    break;
+                case ITEM_LOCAL:
+                    findFragment=new LocalFragment();
                     break;
             }
         }

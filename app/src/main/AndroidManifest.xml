@@ -38,6 +38,8 @@
             android:label="@string/price"/>
         <activity android:name=".activity.CompanyDescriptionActivity"
             android:label="@string/company"/>
+        <activity android:name=".activity.LocalDescriptionActivity"
+            android:label="@string/app_name"/>
         <!--
                 To support devices using the TI S3D library for stereo mode we must
                 add the following library.

@@ -10,6 +10,7 @@ public class Constants {
     public static final String BAOLI_CHENGDU="baoli_chengdu";
     public static final String VIRTUAL_DESCRIPTION="virtual_description";
     public static final String DESCRIPTION_IMAGE="description_image";
+    public static final String LOCAL_IMAGE="local_image";
 
     public static final String[] year = {"1", "2", "3", "4", "5", "10", "15",
             "20", "25", "30"};
