@@ -79,7 +79,6 @@ public class HomeActivity extends BaseActivity {
                     case R.id.item_price:
                         startActivity(new Intent(HomeActivity.this,HouseLoanActivity.class));
                         break;
-
                 }
                 return false;
             }
