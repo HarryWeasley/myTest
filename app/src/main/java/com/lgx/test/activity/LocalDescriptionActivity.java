@@ -6,8 +6,6 @@ import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -26,8 +24,6 @@ import butterknife.ButterKnife;
 public class LocalDescriptionActivity extends BaseActivity {
     @BindView(R.id.image_toolbar)
     ImageView mImageToolbar;
-    @BindView(R.id.toolBar)
-    Toolbar mToolBar;
     @BindView(R.id.image_top)
     ImageView mImageTop;
     @BindView(R.id.image_medium)
@@ -49,10 +45,6 @@ public class LocalDescriptionActivity extends BaseActivity {
     @Override
     protected void initView() {
         ButterKnife.bind(this);
-        setSupportActionBar(mToolBar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
 
         Glide.with(this).load(R.mipmap.local_baoli).into(mImageToolbar);
         ViewCompat.setTransitionName(mImageToolbar, Constants.DESCRIPTION_IMAGE);
@@ -72,14 +64,6 @@ public class LocalDescriptionActivity extends BaseActivity {
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 
 }

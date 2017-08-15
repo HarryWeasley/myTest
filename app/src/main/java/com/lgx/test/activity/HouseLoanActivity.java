@@ -3,12 +3,11 @@ package com.lgx.test.activity;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.lgx.test.R;
+import com.lgx.test.adapter.ViewPagerAdapter;
 import com.lgx.test.base.BaseActivity;
-import com.lgx.test.common.ViewPagerAdapter;
 import com.lgx.test.fragments.CommercialFragment;
 import com.lgx.test.fragments.MixedFragment;
 import com.lgx.test.fragments.ReserveFundsFragment;
@@ -26,13 +25,8 @@ public class HouseLoanActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
         Fragment[] fragments = {
                 CommercialFragment.newInstance(false),
                 new ReserveFundsFragment(),

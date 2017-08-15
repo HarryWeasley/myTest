@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type">
+        <item>A1户型</item>
+        <item>A2户型</item>
+        <item>A3户型</item>
+        <item>B1户型</item>
+        <item>B2户型</item>
+        <item>B3户型</item>
+        <item>C1户型</item>
+        <item>D1户型</item>
+        <item>D2户型</item>
+        <item>D3户型</item>
+        <item>D6户型</item>
+    </string-array>
+
+</resources>

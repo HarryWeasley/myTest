@@ -1,4 +1,4 @@
-package com.lgx.test.common;
+package com.lgx.test.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +12,7 @@ public class FragmentAdapter {
     private FragmentManager mFragmentManager;
     private Fragment[] mFragments;
 
-    public FragmentAdapter(FragmentManager fragmentManager,Fragment[] fragments,int contentId){
+    public FragmentAdapter(FragmentManager fragmentManager, Fragment[] fragments, int contentId){
         mFragmentManager=fragmentManager;
         mFragments=fragments;
         FragmentTransaction fragmentTransaction=mFragmentManager.beginTransaction();

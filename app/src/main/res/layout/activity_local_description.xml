@@ -31,7 +31,7 @@
 
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolBar"
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -87,7 +87,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"/>
 
-            <com.lgx.test.common.HtmlTextView
+            <com.lgx.test.weights.HtmlTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

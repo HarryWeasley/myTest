@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.lgx.test.R;
 import com.lgx.test.activity.LocalDescriptionActivity;
+import com.lgx.test.activity.TypePresentationActivity;
 import com.lgx.test.base.BaseFragment;
 import com.lgx.test.common.Constants;
 
@@ -53,6 +54,7 @@ public class LocalFragment extends BaseFragment {
                 ActivityCompat.startActivity(getActivity(), new Intent(getActivity(), LocalDescriptionActivity.class), optionsCompatCompany.toBundle());
                 break;
             case R.id.type_presentation:
+                startActivity(new Intent(getActivity(), TypePresentationActivity.class));
                 break;
         }
     }

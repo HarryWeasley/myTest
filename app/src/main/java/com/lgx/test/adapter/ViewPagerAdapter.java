@@ -1,4 +1,4 @@
-package com.lgx.test.common;
+package com.lgx.test.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +13,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     private Fragment[] mFragments;
     private String [] mStrings;
 
-    public ViewPagerAdapter(FragmentManager fm,Fragment[] mFragments,String [] mStrings) {
+    public ViewPagerAdapter(FragmentManager fm, Fragment[] mFragments, String [] mStrings) {
         super(fm);
         this.mFragments=mFragments;
         this.mStrings=mStrings;
