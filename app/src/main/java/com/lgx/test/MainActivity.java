@@ -3,6 +3,7 @@ package com.lgx.test;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -25,7 +26,8 @@ public class MainActivity extends UnityPlayerActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ll.addView(mUnityPlayer);
+//                ll.addView(mUnityPlayer);
+                mUnityPlayer.quit();
             }
         });
 
@@ -33,11 +35,6 @@ public class MainActivity extends UnityPlayerActivity {
 
 
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
-    }
 
 
     public void startVideoActivity(String ulr){
@@ -45,6 +42,15 @@ public class MainActivity extends UnityPlayerActivity {
         Intent intent=new Intent(this,VideoActivity.class);
         startActivityForResult(intent,0);
 
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent keyEvent) {
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+            mUnityPlayer.quit();
+        }
+        return false;
     }
 
     @Override
@@ -71,4 +77,6 @@ public class MainActivity extends UnityPlayerActivity {
         }
 
     }
+
+
 }

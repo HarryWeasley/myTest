@@ -34,7 +34,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity"
+     />
         <activity android:name=".activity.HouseLoanActivity"
             android:label="@string/price"/>
         <activity android:name=".activity.CompanyDescriptionActivity"

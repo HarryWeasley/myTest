@@ -15,6 +15,7 @@ import com.lgx.test.R;
 import com.lgx.test.base.BaseActivity;
 import com.lgx.test.fragments.CompanyFragment;
 import com.lgx.test.fragments.FollowUsFragment;
+import com.lgx.test.fragments.HomeFragment;
 import com.lgx.test.fragments.HouseLoanFragment;
 import com.lgx.test.fragments.LocalFragment;
 
@@ -25,7 +26,7 @@ import com.lgx.test.fragments.LocalFragment;
 public class HomeActivity extends BaseActivity {
 
 
-    public static final String ITEM_HOME = "item_home";
+    public static final String ITEM_HOME = "VR模型";
     public static final String ITEM_PRICE = "房贷助手";
     public static final String ITEM_LOCAL = "保利养生谷";
     public static final String ITEM_COMPANY = "保利品牌";
@@ -68,6 +69,9 @@ public class HomeActivity extends BaseActivity {
                 mDrawerLayout.closeDrawers();
                 item.setChecked(true);
                 switch (item.getItemId()) {
+                    case R.id.item_home:
+                        switchContent(ITEM_HOME);
+                        break;
                     case R.id.item_follow:
                         switchContent(ITEM_FOLLOW);
                         break;
@@ -79,14 +83,13 @@ public class HomeActivity extends BaseActivity {
                         break;
                     case R.id.item_price:
                         switchContent(ITEM_PRICE);
-//                        startActivity(new Intent(HomeActivity.this,HouseLoanActivity.class));
                         break;
+
                 }
                 return false;
             }
         });
-
-
+        switchContent(ITEM_LOCAL);
     }
 
     private void switchContent(String tagName) {
@@ -101,6 +104,9 @@ public class HomeActivity extends BaseActivity {
         Fragment findFragment = mFragmentManager.findFragmentByTag(tagName);
         if (findFragment == null) {
             switch (tagName) {
+                case ITEM_HOME:
+                    findFragment = new HomeFragment();
+                    break;
                 case ITEM_FOLLOW:
                     findFragment = new FollowUsFragment();
                     break;
@@ -112,6 +118,7 @@ public class HomeActivity extends BaseActivity {
                     break;
                 case ITEM_PRICE:
                     findFragment=new HouseLoanFragment();
+                    break;
             }
         }
         if (findFragment.isAdded()) {
