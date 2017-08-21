@@ -19,7 +19,7 @@ import com.lgx.test.fragments.FollowUsFragment;
 import com.lgx.test.fragments.LocalFragment;
 
 /**
- * Created by User on 2017/7/25.
+ * Created by Harry on 2017/7/25.
  */
 
 public class HomeActivity extends BaseActivity {

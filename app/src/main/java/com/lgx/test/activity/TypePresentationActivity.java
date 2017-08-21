@@ -21,7 +21,7 @@ import java.util.List;
  */
 
 public class TypePresentationActivity extends BaseActivity {
-    private List<HouseType> houseTypeList;
+    private List<HouseType> houseTypeList=new ArrayList<>();
 
     @Override
     protected int getContentViewLayoutID() {
@@ -51,7 +51,9 @@ public class TypePresentationActivity extends BaseActivity {
     }
 
     private void initData() {
-        houseTypeList = new ArrayList<>();
+        if(houseTypeList.size()!=0){
+            houseTypeList.clear();
+        }
         String[] typeStrings = getResources().getStringArray(R.array.type);
 
         HouseType type1 = new HouseType();
