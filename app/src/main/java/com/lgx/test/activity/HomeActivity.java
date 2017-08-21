@@ -1,6 +1,5 @@
 package com.lgx.test.activity;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -16,6 +15,7 @@ import com.lgx.test.R;
 import com.lgx.test.base.BaseActivity;
 import com.lgx.test.fragments.CompanyFragment;
 import com.lgx.test.fragments.FollowUsFragment;
+import com.lgx.test.fragments.HouseLoanFragment;
 import com.lgx.test.fragments.LocalFragment;
 
 /**
@@ -26,7 +26,7 @@ public class HomeActivity extends BaseActivity {
 
 
     public static final String ITEM_HOME = "item_home";
-    public static final String ITEM_PRICE = "item_price";
+    public static final String ITEM_PRICE = "房贷助手";
     public static final String ITEM_LOCAL = "保利养生谷";
     public static final String ITEM_COMPANY = "保利品牌";
     public static final String ITEM_FOLLOW = "关注我们";
@@ -66,6 +66,7 @@ public class HomeActivity extends BaseActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 mDrawerLayout.closeDrawers();
+                item.setChecked(true);
                 switch (item.getItemId()) {
                     case R.id.item_follow:
                         switchContent(ITEM_FOLLOW);
@@ -77,7 +78,8 @@ public class HomeActivity extends BaseActivity {
                         switchContent(ITEM_LOCAL);
                         break;
                     case R.id.item_price:
-                        startActivity(new Intent(HomeActivity.this,HouseLoanActivity.class));
+                        switchContent(ITEM_PRICE);
+//                        startActivity(new Intent(HomeActivity.this,HouseLoanActivity.class));
                         break;
                 }
                 return false;
@@ -108,6 +110,8 @@ public class HomeActivity extends BaseActivity {
                 case ITEM_LOCAL:
                     findFragment=new LocalFragment();
                     break;
+                case ITEM_PRICE:
+                    findFragment=new HouseLoanFragment();
             }
         }
         if (findFragment.isAdded()) {
