@@ -10,11 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.lgx.test.R;
 import com.lgx.test.adapter.HouseType;
 import com.lgx.test.base.BaseActivity;
 import com.lgx.test.common.Constants;
-import com.lgx.test.weights.PinchImageView;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -29,7 +29,7 @@ public class RealHouseTypeActivity extends BaseActivity {
     private int[] ids = {R.mipmap.a1_type, R.mipmap.a1_type2};
     private List<Integer> imageList = new ArrayList<>();
 
-    private LinkedList<PinchImageView> viewCache = new LinkedList<>();
+    private LinkedList<PhotoView> viewCache = new LinkedList<>();
 
     @Override
     protected int getContentViewLayoutID() {
@@ -66,12 +66,12 @@ public class RealHouseTypeActivity extends BaseActivity {
 
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
-                PinchImageView piv;
+//                PinchImageView piv;
+                PhotoView  piv;
                 if (viewCache.size() > 0) {
                     piv = viewCache.remove();
-                    piv.reset();
                 } else {
-                    piv = new PinchImageView(RealHouseTypeActivity.this);
+                    piv = new PhotoView(RealHouseTypeActivity.this);
                 }
                 Glide.with(RealHouseTypeActivity.this).load(ids[position]).into(piv);
                 container.addView(piv);
@@ -87,7 +87,7 @@ public class RealHouseTypeActivity extends BaseActivity {
 
             @Override
             public void destroyItem(ViewGroup container, int position, Object object) {
-                PinchImageView piv = (PinchImageView) object;
+                PhotoView piv = (PhotoView) object;
                 container.removeView(piv);
                 viewCache.add(piv);
             }
