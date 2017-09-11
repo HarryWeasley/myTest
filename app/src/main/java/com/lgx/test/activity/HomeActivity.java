@@ -14,7 +14,6 @@ import android.view.View;
 import com.lgx.test.R;
 import com.lgx.test.base.BaseActivity;
 import com.lgx.test.fragments.CompanyFragment;
-import com.lgx.test.fragments.FollowUsFragment;
 import com.lgx.test.fragments.HomeFragment;
 import com.lgx.test.fragments.HouseLoanFragment;
 import com.lgx.test.fragments.LocalFragment;
@@ -30,7 +29,6 @@ public class HomeActivity extends BaseActivity {
     public static final String ITEM_PRICE = "房贷助手";
     public static final String ITEM_LOCAL = "保利养生谷";
     public static final String ITEM_COMPANY = "保利品牌";
-    public static final String ITEM_FOLLOW = "关注我们";
     private FragmentManager mFragmentManager;
     private String currentFragmentTag;
     private DrawerLayout mDrawerLayout;
@@ -72,9 +70,6 @@ public class HomeActivity extends BaseActivity {
                     case R.id.item_home:
                         switchContent(ITEM_HOME);
                         break;
-                    case R.id.item_follow:
-                        switchContent(ITEM_FOLLOW);
-                        break;
                     case R.id.item_company:
                         switchContent(ITEM_COMPANY);
                         break;
@@ -106,9 +101,6 @@ public class HomeActivity extends BaseActivity {
             switch (tagName) {
                 case ITEM_HOME:
                     findFragment = new HomeFragment();
-                    break;
-                case ITEM_FOLLOW:
-                    findFragment = new FollowUsFragment();
                     break;
                 case ITEM_COMPANY:
                     findFragment = new CompanyFragment();

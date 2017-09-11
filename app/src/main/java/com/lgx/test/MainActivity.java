@@ -1,62 +1,75 @@
 package com.lgx.test;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 
 import com.lgx.test.activity.VideoActivity;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
 
+import static com.lgx.test.R.id.view;
+
 public class MainActivity extends UnityPlayerActivity {
 
-    LinearLayout  ll;
+    FrameLayout ll;
+    ProgressBar mProgressBar;
+    public static final String VIDEO_URL="video_url";
+    public static final String OVER_VIEW="over_view";
+    public static final String DESCRIPTION="description";
+    public static final int OVER_VIEW_INT=2;
+    public static final int DESCRIPTION_INT=3;
+    private MyTask mMyTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ll= (LinearLayout) findViewById(R.id.frame);
+        ll = (FrameLayout) findViewById(view);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
+        ll.addView(mUnityPlayer);
+        mMyTask = new MyTask();
+        mMyTask.execute();
+    }
 
-        Button btn= (Button) findViewById(R.id.click);
-        btn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mMyTask.cancel(true);
+    }
+
+    public void startVideoActivity(String ulr) {
+        Intent intent = new Intent(this, VideoActivity.class);
+        if("overview".equals(ulr)){
+            intent.putExtra(VIDEO_URL,OVER_VIEW);
+            startActivityForResult(intent, OVER_VIEW_INT);
+        }else{
+            intent.putExtra(VIDEO_URL,DESCRIPTION);
+            startActivityForResult(intent, DESCRIPTION_INT);
+        }
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        runOnUiThread(new Runnable() {
             @Override
-            public void onClick(View v) {
-//                ll.addView(mUnityPlayer);
+            public void run() {
                 mUnityPlayer.quit();
             }
         });
-
-    }
-
-
-
-
-
-    public void startVideoActivity(String ulr){
-        Log.i("tag","测试成功了"+ulr);
-        Intent intent=new Intent(this,VideoActivity.class);
-        startActivityForResult(intent,0);
-
+        super.onBackPressed();
     }
 
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent keyEvent) {
-        if(keyCode==KeyEvent.KEYCODE_BACK){
-            mUnityPlayer.quit();
-        }
-        return false;
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(final int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==1){
+        if (resultCode == 1) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -65,10 +78,16 @@ public class MainActivity extends UnityPlayerActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            UnityPlayer.UnitySendMessage("start","setFirstTrue","");
+                            if(requestCode==DESCRIPTION_INT){
+                                UnityPlayer.UnitySendMessage("start", "setFirstTrue", "");
+                            }else{
+                                UnityPlayer.UnitySendMessage("startOverView", "setFirstTrueOverView", "");
+                            }
+
                         }
                     });
                 }
@@ -76,6 +95,31 @@ public class MainActivity extends UnityPlayerActivity {
 
         }
 
+    }
+
+
+    private class MyTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                Thread.sleep(8000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            mProgressBar.setVisibility(View.GONE);
+
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
     }
 
 

@@ -1,6 +1,7 @@
 package com.lgx.test;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.squareup.leakcanary.LeakCanary;
 
@@ -20,5 +21,6 @@ public class MyApplication extends Application{
         }
         LeakCanary.install(this);
         // Normal app init code...
+        Log.i("tag","MyApplication执行了");
     }
 }

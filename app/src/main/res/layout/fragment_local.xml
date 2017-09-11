@@ -39,4 +39,16 @@
         style="@style/DividerHorizontal"/>
 
 
+    <TextView
+        android:id="@+id/follow_us"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/follow_us"/>
+
+    <View
+        style="@style/DividerHorizontal"/>
+
+
 </LinearLayout>

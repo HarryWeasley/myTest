@@ -16,6 +16,7 @@ import com.lgx.test.common.Constants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by Harry on 2017/8/10.
@@ -36,6 +37,7 @@ public class LocalDescriptionActivity extends BaseActivity {
     CollapsingToolbarLayout mCollapsing;
     @BindView(R.id.fab)
     FloatingActionButton mFab;
+    Unbinder mUnBinder;
 
     @Override
     protected int getContentViewLayoutID() {
@@ -44,7 +46,7 @@ public class LocalDescriptionActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        ButterKnife.bind(this);
+        mUnBinder= ButterKnife.bind(this);
 
         Glide.with(this).load(R.mipmap.local_baoli).into(mImageToolbar);
         ViewCompat.setTransitionName(mImageToolbar, Constants.DESCRIPTION_IMAGE);
@@ -64,6 +66,9 @@ public class LocalDescriptionActivity extends BaseActivity {
         });
     }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUnBinder.unbind();
+    }
 }

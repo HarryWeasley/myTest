@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.lgx.test.R;
+import com.lgx.test.activity.FollowUsActivity;
 import com.lgx.test.activity.LocalDescriptionActivity;
 import com.lgx.test.activity.TypePresentationActivity;
 import com.lgx.test.base.BaseFragment;
@@ -46,7 +47,7 @@ public class LocalFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.project_overview, R.id.type_presentation})
+    @OnClick({R.id.project_overview, R.id.type_presentation,R.id.follow_us})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.project_overview:
@@ -55,6 +56,9 @@ public class LocalFragment extends BaseFragment {
                 break;
             case R.id.type_presentation:
                 startActivity(new Intent(getActivity(), TypePresentationActivity.class));
+                break;
+            case R.id.follow_us:
+                startActivity(new Intent(getActivity(), FollowUsActivity.class));
                 break;
         }
     }
