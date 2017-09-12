@@ -4,6 +4,9 @@
                 android:layout_height="match_parent"
                 android:background="@mipmap/background">
 
+
+
+
     <Button
         android:id="@+id/start"
         style="?android:textAppearanceSmall"
@@ -14,5 +17,14 @@
         android:text="开启vr模型"
         android:textColor="?android:attr/textColorPrimary"
         android:textStyle="bold"/>
+
+
+    <com.lgx.test.weights.HtmlTextView
+        android:layout_below="@id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:layout_centerHorizontal="true"
+        android:text="@string/landscape"/>
 
 </RelativeLayout>

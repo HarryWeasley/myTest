@@ -34,21 +34,29 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
-                  android:process=":main.activity"
-     />
-        <activity android:name=".activity.VideoActivity"
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".MainActivity"
+            android:process=":main.activity"
+            />
+        <activity
+            android:name=".activity.VideoActivity"
             android:screenOrientation="landscape"/>
-        <activity android:name=".activity.HouseLoanActivity"
+        <activity
+            android:name=".activity.HouseLoanActivity"
             android:label="@string/price"/>
-        <activity android:name=".activity.CompanyDescriptionActivity"
+        <activity
+            android:name=".activity.CompanyDescriptionActivity"
             android:label="@string/company"/>
-        <activity android:name=".activity.LocalDescriptionActivity"
+        <activity
+            android:name=".activity.LocalDescriptionActivity"
             android:label="@string/app_name"/>
-        <activity android:name=".activity.TypePresentationActivity"
+        <activity
+            android:name=".activity.TypePresentationActivity"
             android:label="户型介绍"/>
         <activity android:name=".activity.RealHouseTypeActivity"/>
-        <activity android:name=".activity.FollowUsActivity"
+        <activity
+            android:name=".activity.FollowUsActivity"
             android:label="@string/follow_us"/>
         <!--
                 To support devices using the TI S3D library for stereo mode we must

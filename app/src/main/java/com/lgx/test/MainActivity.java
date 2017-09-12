@@ -11,8 +11,6 @@ import com.lgx.test.activity.VideoActivity;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
 
-import static com.lgx.test.R.id.view;
-
 public class MainActivity extends UnityPlayerActivity {
 
     FrameLayout ll;
@@ -28,9 +26,9 @@ public class MainActivity extends UnityPlayerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ll = (FrameLayout) findViewById(view);
+        ll = (FrameLayout) findViewById(R.id.view);
         mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
-        ll.addView(mUnityPlayer);
+        ll.addView(mUnityPlayer.getView());
         mMyTask = new MyTask();
         mMyTask.execute();
     }
