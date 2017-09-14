@@ -6,6 +6,7 @@ import android.content.ContextWrapper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.VideoView;
 
@@ -26,6 +27,7 @@ public class VideoActivity extends Activity{
         VideoView videoView= (VideoView) findViewById(R.id.video_view);
         String video_url=getIntent().getStringExtra(MainActivity.VIDEO_URL);
         String url="android.resource://"+getPackageName()+"/"+ R.raw.description;
+        Log.i(getClass().getSimpleName(),"ulr="+video_url);
         if(MainActivity.OVER_VIEW.equals(video_url)){
             url="android.resource://"+getPackageName()+"/"+ R.raw.overview;
         }

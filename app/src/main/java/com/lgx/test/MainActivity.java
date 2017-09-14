@@ -1,8 +1,8 @@
 package com.lgx.test;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
@@ -20,7 +20,6 @@ public class MainActivity extends UnityPlayerActivity {
     public static final String DESCRIPTION="description";
     public static final int OVER_VIEW_INT=2;
     public static final int DESCRIPTION_INT=3;
-    private MyTask mMyTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +28,15 @@ public class MainActivity extends UnityPlayerActivity {
         ll = (FrameLayout) findViewById(R.id.view);
         mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
         ll.addView(mUnityPlayer.getView());
-        mMyTask = new MyTask();
-        mMyTask.execute();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mMyTask.cancel(true);
     }
 
     public void startVideoActivity(String ulr) {
+        Log.i(getClass().getSimpleName(),"ulr="+ulr);
         Intent intent = new Intent(this, VideoActivity.class);
         if("overview".equals(ulr)){
             intent.putExtra(VIDEO_URL,OVER_VIEW);
@@ -50,6 +47,18 @@ public class MainActivity extends UnityPlayerActivity {
         }
 
 
+    }
+
+    public void HideSplash(){
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+
+    public void startVideoActivity2(String ulr) {
+        Log.i(getClass().getSimpleName(),"ulr="+ulr);
+        Intent intent = new Intent(this, VideoActivity.class);
+        intent.putExtra(VIDEO_URL,OVER_VIEW);
+        startActivityForResult(intent, OVER_VIEW_INT);
     }
 
     @Override
@@ -96,29 +105,6 @@ public class MainActivity extends UnityPlayerActivity {
     }
 
 
-    private class MyTask extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                Thread.sleep(8000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            mProgressBar.setVisibility(View.GONE);
-
-        }
-
-        @Override
-        protected void onCancelled() {
-            super.onCancelled();
-        }
-    }
 
 
 }
