@@ -12,10 +12,24 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
-    buildTypes {
+
+    signingConfigs {
         release {
-            minifyEnabled false
+            storeFile file("../baoli.jks")
+            storePassword "baoli123"
+            keyAlias "baoli2"
+            keyPassword "123baoli"
+        }
+    }
+
+    buildTypes {
+        debug{
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }

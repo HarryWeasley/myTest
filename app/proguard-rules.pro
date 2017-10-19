@@ -30,3 +30,10 @@
     **[] $VALUES;
     public *;
 }
+-keep class com.vuforia.** { *; }
+-keep interface com.vuforia.** { *; }
+
+-keep class com.osterhoutgroup.** { *; }
+-keep class com.ti.s3d.** { *; }
+
+-dontwarn com.vuforia.ar.**

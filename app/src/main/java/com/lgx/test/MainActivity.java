@@ -2,7 +2,6 @@ package com.lgx.test;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
@@ -36,7 +35,6 @@ public class MainActivity extends UnityPlayerActivity {
     }
 
     public void startVideoActivity(String ulr) {
-        Log.i(getClass().getSimpleName(),"ulr="+ulr);
         Intent intent = new Intent(this, VideoActivity.class);
         if("overview".equals(ulr)){
             intent.putExtra(VIDEO_URL,OVER_VIEW);
@@ -55,7 +53,6 @@ public class MainActivity extends UnityPlayerActivity {
 
 
     public void startVideoActivity2(String ulr) {
-        Log.i(getClass().getSimpleName(),"ulr="+ulr);
         Intent intent = new Intent(this, VideoActivity.class);
         intent.putExtra(VIDEO_URL,OVER_VIEW);
         startActivityForResult(intent, OVER_VIEW_INT);
