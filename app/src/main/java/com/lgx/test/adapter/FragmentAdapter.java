@@ -3,6 +3,7 @@ package com.lgx.test.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 /**
  * Created by Harry on 2017/8/8.
@@ -27,6 +28,7 @@ public class FragmentAdapter {
         FragmentTransaction transaction=mFragmentManager.beginTransaction();
         for (int i=0;i<mFragments.length;i++){
             if(i==position){
+                Log.i("FragmentAdapter","FragmentAdapter显示的position"+i);
                 mFragments[i].setUserVisibleHint(true);
                 transaction.show(mFragments[i]);
             }else{
@@ -34,6 +36,7 @@ public class FragmentAdapter {
                 transaction.hide(mFragments[i]);
             }
         }
+        transaction.commit();
 
     }
 }
