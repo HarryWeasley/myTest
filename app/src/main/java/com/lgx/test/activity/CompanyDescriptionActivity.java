@@ -1,6 +1,5 @@
 package com.lgx.test.activity;
 
-import android.graphics.Color;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewCompat;
 import android.widget.ImageView;
@@ -41,8 +40,8 @@ public class CompanyDescriptionActivity extends BaseActivity {
                 description.setText(getString(R.string.baoli_chengdu));
                 break;
         }
-        collapsingToolbarLayout.setExpandedTitleColor(Color.GREEN);
-        collapsingToolbarLayout.setCollapsedTitleTextColor(Color.BLACK);
+//        collapsingToolbarLayout.setExpandedTitleColor(Color.GREEN);
+//        collapsingToolbarLayout.setCollapsedTitleTextColor(Color.BLACK);
     }
 
 }

@@ -3,7 +3,7 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="homepage">主页</string>
-    <string name="vr_model">VR模型</string>
+    <string name="vr_model">AR看房</string>
     <string name="price">房价助手</string>
     <string name="company">保利品牌</string>
     <string name="follow_us">关注我们</string>
@@ -20,6 +20,7 @@
     <string name="am13">总支付利息</string>
     <string name="am14">本息总和</string>
     <string name="landscape"><![CDATA[ <font color=#ffffff>点击上方按钮后，请将手机</font><font color=#FF0000>横置录像</font>]]> </string>
+    <string name="landscape2">请点击按钮后，将摄像头对准宣传资料</string>
     <string name="phone_number">电话联系：<u>0825-2281118</u></string>
 
     <string name="china_baoli">\t\t\t\t中国保利集团公司系国务院国有资产监督管理委员会管理的大型中央企业，于1992年经国务院、中央军委批准组建。\n\r

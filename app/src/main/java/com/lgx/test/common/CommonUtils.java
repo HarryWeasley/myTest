@@ -6,7 +6,7 @@ package com.lgx.test.common;
 
 public class CommonUtils {
     public static double getRate(int position){
-        double value = 6.55f;
+        double value = 4.9f;
         switch (position) {
             case 0:
                 value = value * 0.7;

@@ -158,12 +158,16 @@ public class MixedFragment extends BaseFragment {
                 if (TextUtils.isEmpty(valueReserve)) {
                     mReserveTextInput.setError("公积金贷款总额不能为空");
                     return;
+                }else{
+                    mReserveTextInput.setError("");
                 }
 
                 String value = mCommercialEditText.getText().toString();
                 if (TextUtils.isEmpty(value)) {
                     mCommercialTextInput.setError("贷款总额不能为空");
                     return;
+                }else{
+                    mCommercialTextInput.setError("");
                 }
 
                 String rateValue = mRateEditText.getText().toString();

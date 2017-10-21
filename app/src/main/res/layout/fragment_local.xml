@@ -22,6 +22,8 @@
         android:layout_height="45dp"
         android:background="?android:attr/selectableItemBackground"
         android:gravity="center"
+        android:textColor="@color/green"
+        android:textSize="20sp"
         android:text="项目概况"/>
 
     <View
@@ -33,6 +35,8 @@
         android:layout_height="45dp"
         android:background="?android:attr/selectableItemBackground"
         android:gravity="center"
+        android:textColor="@color/green"
+        android:textSize="20sp"
         android:text="户型介绍"/>
 
     <View
@@ -45,6 +49,8 @@
         android:layout_height="45dp"
         android:background="?android:attr/selectableItemBackground"
         android:gravity="center"
+        android:textColor="@color/green"
+        android:textSize="20sp"
         android:text="@string/follow_us"/>
 
     <View

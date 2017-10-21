@@ -76,7 +76,7 @@ public class HomeFragment extends BaseFragment implements EasyPermissions.Permis
     public void onPermissionsDenied(int requestCode, List<String> perms) {
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
             new AppSettingsDialog.Builder(this)
-                    .setRationale("没有该权限，将不能打开vr视频。打开应用设置屏幕以修改应用权限")
+                    .setRationale("没有该权限，将不能打开ar视频。打开应用设置屏幕以修改应用权限")
                     .setTitle("必需权限")
                     .build()
                     .show();

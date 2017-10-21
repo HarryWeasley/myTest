@@ -1,7 +1,6 @@
 package com.lgx.test.activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -55,7 +54,7 @@ public class LocalDescriptionActivity extends BaseActivity {
         Glide.with(this).load(R.mipmap.bottom).into(mImageBottom);
         Glide.with(this).load(R.mipmap.bottom2).into(mImageBottom2);
 
-        mCollapsing.setExpandedTitleColor(Color.GREEN);
+//        mCollapsing.setExpandedTitleColor(Color.GREEN);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

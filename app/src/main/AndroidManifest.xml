@@ -27,6 +27,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize"
             android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -51,7 +52,7 @@
             android:label="@string/company"/>
         <activity
             android:name=".activity.LocalDescriptionActivity"
-            android:label="@string/app_name"/>
+            android:label="项目概况"/>
         <activity
             android:name=".activity.TypePresentationActivity"
             android:label="户型介绍"/>

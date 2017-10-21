@@ -158,6 +158,8 @@ public class CommercialFragment extends BaseFragment {
                 if (TextUtils.isEmpty(value)) {
                     mCommercialTextInput.setError("贷款总额不能为空");
                     return;
+                }else {
+                    mCommercialTextInput.setError("");
                 }
                 String yearValue = mYearEditText.getText().toString();
                 if (TextUtils.isEmpty(yearValue)) {

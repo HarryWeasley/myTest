@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="20dp"
-        android:text="开启vr模型"
+        android:text="开启AR"
         android:textColor="?android:attr/textColorPrimary"
         android:textStyle="bold"/>
 
@@ -25,6 +25,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/red"
         android:layout_centerHorizontal="true"
-        android:text="@string/landscape"/>
+        android:text="@string/landscape2"/>
 
 </RelativeLayout>

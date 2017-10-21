@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.lgx.test.R;
 import com.lgx.test.adapter.HouseType;
@@ -73,7 +72,8 @@ public class RealHouseTypeActivity extends BaseActivity {
                 } else {
                     piv = new PhotoView(RealHouseTypeActivity.this);
                 }
-                Glide.with(RealHouseTypeActivity.this).load(ids[position]).into(piv);
+//                Glide.with(RealHouseTypeActivity.this).load(ids[position]).into(piv);
+                piv.setImageResource(imageList.get(position));
                 container.addView(piv);
                 piv.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
